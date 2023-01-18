@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap");
+html,
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+nav {
+  text-align: right;
+}
+
+#container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 50px;
+}
+.hide {
+  display: none;
+}
+/* #featured {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+#featured img {
+  width: 300px;
+  height: 300px;
+} */
+h3,
+h5 {
+  text-align: center;
+}
