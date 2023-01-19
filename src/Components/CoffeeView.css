@@ -4,7 +4,21 @@
   object-fit: cover;
   cursor: pointer;
 }
-
+#featured {
+  display: grid;
+  justify-items: center;
+  overflow: hidden;
+  max-width: 100%;
+}
+#featured h3,
+h4 {
+  display: grid;
+  max-width: 80%;
+}
+#featured img {
+  max-width: 80%;
+  object-fit: cover;
+}
 #container-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
