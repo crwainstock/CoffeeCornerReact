@@ -8,7 +8,7 @@ import MyCoffees from "./Components/MyCoffees";
 
 function App() {
   //set state data -- allCoffees = empty array, setCoffees = function to modify the allCoffees array
-  const [allCoffees, setCoffees] = useState([MyCoffees]);
+  const [allCoffees, setCoffees] = useState(MyCoffees);
   const [gridView, setGridView] = useState(true);
 
   console.log(allCoffees);
