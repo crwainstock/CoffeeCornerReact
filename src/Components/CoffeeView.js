@@ -22,7 +22,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
         <div id="grid">
           {allCoffees.map((coffee) => (
             <div key={coffee.id}>
-              <p id={coffee.id}>{coffee.name}</p>
+              <h4 id={coffee.id}>{coffee.name}</h4>
               <img src={coffee.image} onClick={() => handleClick(coffee.id)} />
             </div>
           ))}

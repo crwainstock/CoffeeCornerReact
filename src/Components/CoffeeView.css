@@ -1,19 +1,24 @@
+​#grid img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 #container-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 40px;
 }
 ​ #grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: 180px;
   gap: 50px;
 }
-​ img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
+
+h4 {
+  text-align: center;
 }
 /* ​ .hide {
   display: none;
