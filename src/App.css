@@ -3,13 +3,13 @@
 /* Import Bootstrap CDN */
 
 html,
-body {
+div {
   font-family: "Noto Sans", sans-serif;
 }
 nav {
   text-align: right;
 }
-button {
+.btn {
   margin: 1rem;
 }
 h1,

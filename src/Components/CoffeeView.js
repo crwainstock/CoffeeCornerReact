@@ -21,7 +21,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
       <div id="container-grid">
         <div id="grid">
           {allCoffees.map((coffee) => (
-            <div key={coffee.id}>
+            <div id="coffee" key={coffee.id}>
               <h4 id={coffee.id}>{coffee.name}</h4>
               <img
                 src={coffee.image}
