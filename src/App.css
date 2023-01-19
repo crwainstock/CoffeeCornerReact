@@ -12,24 +12,6 @@ nav {
 button {
   margin: 1rem;
 }
-#container-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 50px;
-}
-.hide {
-  display: none;
-}
-/* #featured {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-#featured img {
-  width: 300px;
-  height: 300px;
-} */
 h1,
 h3,
 h5 {
