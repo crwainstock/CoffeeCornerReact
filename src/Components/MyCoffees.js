@@ -42,3 +42,7 @@ export default [
     price: 1.8,
   },
 ];
+
+//Giving this warning in the terminal:
+//src\Components\MyCoffees.js
+//   Line 1:1:  Assign array to a variable before exporting as module default  import/no-anonymous-default-export

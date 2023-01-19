@@ -1,36 +1,35 @@
-​#grid img {
-  width: 60%;
-  height: 60%;
-  object-fit: cover;
-  cursor: pointer;
-}
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css");
+/* Import Bootstrap CDN */
+
+/* FEATURED SECTION */
 #featured {
   display: grid;
-  justify-items: center;
-  overflow: hidden;
-  max-width: 100%;
 }
-#featured h3,
-h4 {
-  display: grid;
-  max-width: 80%;
-}
+
 #featured img {
-  max-width: 80%;
+  display: grid;
+  max-width: 100%;
   object-fit: cover;
 }
+
+/* GRID */
 #container-grid {
   display: grid;
+  justify-items: center;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
 }
 ​ #grid {
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 180px;
   gap: 50px;
 }
-
+​#grid img {
+  object-fit: cover;
+  cursor: pointer;
+}
 h4 {
   text-align: center;
 }

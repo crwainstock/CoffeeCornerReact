@@ -23,7 +23,11 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
           {allCoffees.map((coffee) => (
             <div key={coffee.id}>
               <h4 id={coffee.id}>{coffee.name}</h4>
-              <img src={coffee.image} onClick={() => handleClick(coffee.id)} />
+              <img
+                src={coffee.image}
+                onClick={() => handleClick(coffee.id)}
+                alt="coffee"
+              />
             </div>
           ))}
         </div>
@@ -32,7 +36,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
             <div>
               <h3>Featured Coffee</h3>
               <h4>{featured.name}</h4>
-              <img src={featured.image} />
+              <img src={featured.image} alt="featured coffee" />
             </div>
           </div>
         )}
