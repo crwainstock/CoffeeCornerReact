@@ -35,7 +35,9 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
           <div id="featured">
             <div>
               <h3>Featured Coffee</h3>
-              <h4>{featured.name}</h4>
+              <h4>
+                {featured.name} {featured.price}€
+              </h4>
               <img src={featured.image} alt="featured coffee" />
             </div>
           </div>
