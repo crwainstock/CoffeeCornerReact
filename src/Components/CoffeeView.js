@@ -18,19 +18,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
   return (
     <div>
       <h2>Pick a favorite:</h2>
-      <div id="container-grid">
-        <div id="coffee-grid">
-          {allCoffees.map((coffee) => (
-            <div id="coffee" key={coffee.id}>
-              <h4 id={coffee.id}>{coffee.name}</h4>
-              <img
-                src={coffee.image}
-                onClick={() => handleClick(coffee.id)}
-                alt="coffee"
-              />
-            </div>
-          ))}
-        </div>
+      <div id="featured-container" className="container">
         {featured.name && (
           <div id="featured">
             <div>
@@ -42,6 +30,21 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
             </div>
           </div>
         )}
+      </div>
+      <div id="container-grid" className="container">
+        <div id="coffee-grid" className="row">
+          {allCoffees.map((coffee) => (
+            <div id="coffee" key={coffee.id} className="col-sm-3">
+              <h4 id={coffee.id}>{coffee.name}</h4>
+              <img
+                src={coffee.image}
+                onClick={() => handleClick(coffee.id)}
+                alt="coffee"
+                className="img-fluid rounded"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

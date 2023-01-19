@@ -2,7 +2,7 @@
 /* Import Bootstrap CDN */
 
 /* FEATURED SECTION */
-#featured {
+/* #featured {
   display: grid;
 }
 #featured h3 {
@@ -13,10 +13,18 @@
   max-width: 100%;
   object-fit: cover;
   border-radius: 5px;
-}
+} */
 
 /* GRID */
-#container-grid {
+/* This grid isn't allowing two columns for some reason... */
+#featured img {
+  max-width: 30%;
+}
+img {
+  max-width: 100%;
+}
+
+/* #container-grid {
   display: grid;
   justify-items: center;
   grid-template-columns: 2fr 1fr;
@@ -26,7 +34,6 @@
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
-  /* This grid isn't allowing two columns for some reason... */
   grid-auto-rows: 180px;
   gap: 50px;
 }
@@ -41,7 +48,7 @@
 }
 h4 {
   text-align: center;
-}
+} */
 /* ​ .hide {
   display: none;
 } */
