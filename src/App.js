@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import "./Components/CoffeeView"; //import CoffeeView component
-import "./Components/CoffeeForm";
 import CoffeeView from "./Components/CoffeeView";
+// import "./Components/CoffeeForm";
+
+import MyCoffees from "./Components/MyCoffees";
 
 function App() {
   //set state data -- allCoffees = empty array, setCoffees = function to modify the allCoffees array
-  const [allCoffees, setCoffees] = useState(["Latte", "Drip Coffee", "Mocha"]);
+  const [allCoffees, setCoffees] = useState([MyCoffees]);
   const [gridView, setGridView] = useState(true);
 
   console.log(allCoffees);
@@ -31,10 +33,14 @@ function App() {
         </nav>
         <div className="container">
           <h1>Coffee Corner</h1>
-          <CoffeeView
-            allCoffees={allCoffees}
-            featuredSelectedCB={featuredSelected}
-          />
+          {gridView ? (
+            <CoffeeView
+              allCoffees={allCoffees}
+              featuredSelectedCB={featuredSelected}
+            />
+          ) : (
+            <h3>Insert FormView here later</h3>
+          )}
         </div>
       </main>
     </div>
