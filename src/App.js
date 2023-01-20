@@ -10,6 +10,7 @@ import MyCoffees from "./Components/MyCoffees";
 function App() {
   //set state data -- allCoffees = empty array, setCoffees = function to modify the allCoffees array
   const [allCoffees, setCoffees] = useState(MyCoffees);
+  //Can I define setCoffees here and use it in the CoffeeForm component?
   const [gridView, setGridView] = useState(true);
 
   console.log(allCoffees);

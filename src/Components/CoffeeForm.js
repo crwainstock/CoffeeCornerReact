@@ -18,7 +18,7 @@ function CoffeeForm() {
     };
     console.log(newCoffee);
     //Something here to set new ID with each submission -- increment
-    //Something to push newCoffee into allCoffees array
+    //Something to push newCoffee into allCoffees array -- addCoffee function?
   }
 
   return (
@@ -44,9 +44,7 @@ function CoffeeForm() {
           onChange={(e) => addImage(e.target.value)}
         />
 
-        <button type="submit" handleSubmit={handleSubmit}>
-          Add Coffee
-        </button>
+        <button type="submit">Add Coffee</button>
       </form>
     </div>
   );
