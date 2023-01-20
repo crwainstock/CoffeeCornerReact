@@ -16,6 +16,8 @@ function CoffeeForm() {
       price: { price },
       image: { image },
     };
+    console.log(newCoffee);
+    //Something here to set new ID with each submission -- increment
   }
   // This error came up in console: react-dom.development.js:86 Warning: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
   //Added newCoffee object to handleSubmit function, but then it's saying newCoffee is alreay defined.
@@ -42,10 +44,14 @@ function CoffeeForm() {
           onChange={(e) => addImage(e.target.value)}
         />
 
-        <button type="submit">Add Coffee</button>
+        <button type="submit" handleSubmit={handleSubmit}>
+          Add Coffee
+        </button>
       </form>
     </div>
   );
 }
 
 export default CoffeeForm;
+
+// This resource was useful for putting the form inputs together: https://beta.reactjs.org/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
