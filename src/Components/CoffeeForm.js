@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../App.css";
 import "../App";
 
 function CoffeeForm({ allCoffees, setCoffeesCB }) {
@@ -23,32 +24,52 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
     setCoffees(newCoffee);
     setCoffeesCB();
     //This bit is copied from what was done in the CoffeeView component, but something is missing.
+    //Something to reset form input fields upon submission -- reset state values to empty?
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Add a coffee</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={name} //passing prop here
-          placeholder="Name"
-          onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke?
-        />
-        <input
-          type="text"
-          value={price}
-          placeholder="Price"
-          onChange={(e) => addPrice(e.target.value)}
-        />
-        <input
-          type="url"
-          value={image}
-          placeholder="Image URL"
-          onChange={(e) => addImage(e.target.value)}
-        />
-
-        <button type="submit">Add Coffee</button>
+        <div className="form-group col-md-4">
+          <label for="name">
+            <h4>Coffee Name</h4>
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            value={name} //passing prop here
+            placeholder="Name"
+            onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke?
+          />
+        </div>
+        <div className="form-group col-md-4">
+          <label for="price">
+            <h4>Price</h4>
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            value={price}
+            placeholder="€"
+            onChange={(e) => addPrice(e.target.value)}
+          />
+        </div>
+        <div className="form-group col-md-4">
+          <label for="image">
+            <h4>Image URL</h4>
+          </label>
+          <input
+            type="url"
+            className="form-control"
+            value={image}
+            placeholder="Image URL"
+            onChange={(e) => addImage(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="btn btn-success">
+          Add Coffee
+        </button>
       </form>
     </div>
   );
