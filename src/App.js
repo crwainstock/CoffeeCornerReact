@@ -8,7 +8,7 @@ import CoffeeView from "./Components/CoffeeView";
 import MyCoffees from "./Components/MyCoffees";
 
 function App() {
-  //set state data -- allCoffees = empty array, setCoffees = function to modify the allCoffees array
+  //set state data -- allCoffees = empty array(initially, now it's using default data js file), setCoffees = function to modify the allCoffees array
   const [allCoffees, setCoffees] = useState(MyCoffees);
   //Can I define setCoffees here and use it in the CoffeeForm component?
   const [gridView, setGridView] = useState(true);
@@ -18,6 +18,7 @@ function App() {
   function featuredSelected() {
     console.log("hello");
   }
+  //What is this actually doing? We don't really need it, do we???
 
   return (
     <div className="App">
@@ -41,7 +42,7 @@ function App() {
               featuredSelectedCB={featuredSelected}
             />
           ) : (
-            <CoffeeForm />
+            <CoffeeForm allCoffees={allCoffees} setCoffeesCB={setCoffees} />
           )}
         </div>
       </main>

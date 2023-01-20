@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "../App";
 
-function CoffeeForm() {
-  const [newCoffee, addCoffee] = useState({}); //Whole new coffee object
+function CoffeeForm({ allCoffees, setCoffeesCB }) {
+  const [newCoffee, setCoffees] = useState({}); //Whole new coffee object
   const [name, addName] = useState("");
   const [price, addPrice] = useState("");
   const [image, addImage] = useState("");
   //Is it necessary to include each input like this?
   //What is the best way to include the id here? Increment it?
 
-  function handleSubmit() {
+  function handleSubmit(e) {
     // console.log("submitted");
+    e.preventDefault();
     let newCoffee = {
       name: { name },
       price: { price },
@@ -19,6 +20,9 @@ function CoffeeForm() {
     console.log(newCoffee);
     //Something here to set new ID with each submission -- increment
     //Something to push newCoffee into allCoffees array -- addCoffee function?
+    setCoffees(newCoffee);
+    setCoffeesCB();
+    //This bit is copied from what was done in the CoffeeView component, but something is missing.
   }
 
   return (
@@ -44,7 +48,9 @@ function CoffeeForm() {
           onChange={(e) => addImage(e.target.value)}
         />
 
-        <button type="submit">Add Coffee</button>
+        <button type="submit" handleSubmit={handleSubmit}>
+          Add Coffee
+        </button>
       </form>
     </div>
   );
