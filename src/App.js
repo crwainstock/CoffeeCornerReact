@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import CoffeeForm from "./Components/CoffeeForm";
 import "./Components/CoffeeView"; //import CoffeeView component
 import CoffeeView from "./Components/CoffeeView";
 // import "./Components/CoffeeForm";
@@ -39,7 +40,7 @@ function App() {
               featuredSelectedCB={featuredSelected}
             />
           ) : (
-            <h3>Insert FormView here later</h3>
+            <CoffeeForm />
           )}
         </div>
       </main>
