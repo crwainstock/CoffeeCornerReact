@@ -10,7 +10,7 @@ function CoffeeForm() {
   //What is the best way to include the id here? Increment it?
 
   function handleSubmit() {
-    console.log("submitted");
+    // console.log("submitted");
     let newCoffee = {
       name: { name },
       price: { price },
@@ -27,9 +27,9 @@ function CoffeeForm() {
       <form>
         <input
           type="text"
-          value={name}
+          value={name} //passing prop here
           placeholder="Name"
-          onChange={(e) => addName(e.target.value)}
+          onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke?
         />
         <input
           type="text"
