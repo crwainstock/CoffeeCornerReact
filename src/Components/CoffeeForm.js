@@ -9,7 +9,7 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
   //Is it necessary to include each input like this?
   //What is the best way to include the id here? Increment it?
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     // console.log("submitted");
     e.preventDefault();
     let newCoffee = {
@@ -17,18 +17,18 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
       price: { price },
       image: { image },
     };
-    console.log(newCoffee);
+    console.log(newCoffee); //working
     //Something here to set new ID with each submission -- increment
     //Something to push newCoffee into allCoffees array -- addCoffee function?
     setCoffees(newCoffee);
     setCoffeesCB();
     //This bit is copied from what was done in the CoffeeView component, but something is missing.
-  }
+  };
 
   return (
     <div>
       <h2>Add a coffee</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={name} //passing prop here
@@ -48,9 +48,7 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
           onChange={(e) => addImage(e.target.value)}
         />
 
-        <button type="submit" handleSubmit={handleSubmit}>
-          Add Coffee
-        </button>
+        <button type="submit">Add Coffee</button>
       </form>
     </div>
   );
