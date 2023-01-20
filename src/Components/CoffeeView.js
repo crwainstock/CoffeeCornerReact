@@ -9,10 +9,8 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
     console.log("clicked");
     let selected = allCoffees.find((item) => item.id === id);
     setFeatured(selected);
-    // console.log(selected.image);
-    //send the information to parent component by calling the callback function
-    //right now no data is passed, only function is called and the parent console.logs hello to check the connection
     featuredSelectedCB();
+    //This function is defined in the App.js parent -- called here to communicate back up to parent
   }
 
   return (
