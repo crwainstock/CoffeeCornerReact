@@ -24,15 +24,36 @@ function App() {
     <div className="App">
       <main>
         <nav>
-          <button
-            className="btn btn-warning"
-            onClick={() => setGridView(false)}
-          >
-            Add Coffee
-          </button>
-          <button className="btn btn-warning" onClick={() => setGridView(true)}>
-            Choose Your Cup
-          </button>
+          {gridView ? (
+            <button
+              className="btn btn-warning"
+              onClick={() => setGridView(false)}
+            >
+              Add Coffee
+            </button>
+          ) : (
+            <button
+              className="btn btn-danger"
+              onClick={() => setGridView(false)}
+            >
+              Add Coffee
+            </button>
+          )}
+          {gridView ? (
+            <button
+              className="btn btn-danger"
+              onClick={() => setGridView(true)}
+            >
+              Choose Your Cup
+            </button>
+          ) : (
+            <button
+              className="btn btn-warning"
+              onClick={() => setGridView(true)}
+            >
+              Choose Your Cup
+            </button>
+          )}
         </nav>
         <div className="container">
           <h1>Coffee Corner</h1>
