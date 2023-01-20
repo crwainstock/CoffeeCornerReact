@@ -18,9 +18,9 @@ function CoffeeForm() {
     };
     console.log(newCoffee);
     //Something here to set new ID with each submission -- increment
+    //Something to push newCoffee into allCoffees array
   }
-  // This error came up in console: react-dom.development.js:86 Warning: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
-  //Added newCoffee object to handleSubmit function, but then it's saying newCoffee is alreay defined.
+
   return (
     <div>
       <h2>Add a coffee</h2>
