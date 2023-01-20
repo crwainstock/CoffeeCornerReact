@@ -21,13 +21,11 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
       <div id="featured-container" className="container">
         {featured.name && (
           <div id="featured">
-            <div>
-              <h3>Featured Coffee</h3>
-              <h4>
-                {featured.name} {featured.price}€
-              </h4>
-              <img src={featured.image} alt="featured coffee" />
-            </div>
+            <h3>Featured Coffee</h3>
+            <h4>
+              {featured.name} {featured.price}€
+            </h4>
+            <img src={featured.image} alt="featured coffee" className="" />
           </div>
         )}
       </div>

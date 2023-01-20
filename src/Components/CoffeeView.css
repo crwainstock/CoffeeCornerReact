@@ -17,6 +17,8 @@
 
 /* GRID */
 /* This grid isn't allowing two columns for some reason... */
+
+/* Revisit this in media queries for mobile. The featured image is tiny on mobile. */
 #featured img {
   max-width: 30%;
 }
@@ -24,6 +26,9 @@ img {
   max-width: 100%;
 }
 
+#coffee-grid {
+  margin-bottom: 2rem;
+}
 /* #container-grid {
   display: grid;
   justify-items: center;
