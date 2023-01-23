@@ -9,7 +9,7 @@ import MyCoffees from "./Components/MyCoffees";
 
 function App() {
   //set state data -- allCoffees = empty array(initially, now it's using default data js file), setCoffees = function to modify the allCoffees array
-  const [allCoffees, setCoffees] = useState(MyCoffees);
+  const [allCoffees, setAllCoffees] = useState(MyCoffees);
   //Can I define setCoffees here and use it in the CoffeeForm component?
   const [gridView, setGridView] = useState(true);
 
@@ -72,7 +72,10 @@ function App() {
           {gridView ? (
             <CoffeeView handleAddCoffee={handleAddCoffee} /> //Updated this and get setAllCoffees is not defined error in line 25
           ) : (
-            <CoffeeForm allCoffees={allCoffees} setCoffeesCB={setCoffees} />
+            <CoffeeForm
+              allCoffees={allCoffees}
+              setAllCoffeesCB={setAllCoffees}
+            />
           )}
         </div>
       </main>
