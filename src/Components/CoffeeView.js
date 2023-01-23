@@ -33,13 +33,14 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
       </div>
       <div id="container-grid" className="container">
         <div id="coffee-grid" className="row">
+          {/* Getting an error here re: map -- what part of this is undefined? why? It was working before. Adding ? after allCoffees worked.*/}
           {allCoffees.map((coffee) => (
             <div id="coffee" key={coffee.id} className="col-sm-3">
               <h4 id={coffee.id}>{coffee.name}</h4>
               <img
                 src={coffee.image}
                 onClick={() => handleClick(coffee.id)}
-                alt="coffee"
+                alt="singleCoffee"
                 className="img-fluid rounded"
               />
             </div>

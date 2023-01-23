@@ -2,28 +2,41 @@ import { useState } from "react";
 import "../App.css";
 import "../App";
 
-function CoffeeForm({ allCoffees, setCoffeesCB }) {
-  const [newCoffee, setCoffees] = useState({}); //Whole new coffee object
-  const [name, addName] = useState("");
-  const [price, addPrice] = useState("");
-  const [image, addImage] = useState("");
-  //Is it necessary to include each input like this?
-  //What is the best way to include the id here? Increment it?
+function CoffeeForm({ handleAddCoffee }) {
+  //Is this where I need to destructure this handleAddCoffees function? idk.
+  const [newCoffee, setNewCoffee] = useState({
+    name: "",
+    price: "",
+    image: "",
+  });
+  //Update name property when new item is added
+  const handleNameChange = (event) => {
+    setNewCoffee((prevState) => ({
+      ...prevState,
+      name: event.target.value,
+    }));
+  };
+  //Update price property
+  const handlePriceChange = (event) => {
+    setNewCoffee((prevState) => ({
+      ...prevState,
+      price: event.target.value,
+    }));
+  };
+  //Update image property
+  const handleImageChange = (event) => {
+    setNewCoffee((prevState) => ({
+      ...prevState,
+      price: event.target.value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     // console.log("submitted");
     e.preventDefault();
-    let newCoffee = {
-      name: { name },
-      price: { price },
-      image: { image },
-    };
     console.log(newCoffee); //working
-    //Something here to set new ID with each submission -- increment
-    //Something to push newCoffee into allCoffees array -- addCoffee function?
-    setCoffees(newCoffee);
-    setCoffeesCB();
-    //This bit is copied from what was done in the CoffeeView component, but something is missing.
+    // handleAddCoffee(newCoffee);
+
     //Something to reset form input fields upon submission -- reset state values to empty?
   };
 
@@ -38,9 +51,10 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
           <input
             type="text"
             className="form-control"
-            value={name} //passing prop here
+            value={newCoffee.name} //passing prop here
             placeholder="Name"
-            onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke?
+            onChange={handleNameChange}
+            // onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke? Original attempt.
           />
         </div>
         <div className="form-group col-md-4">
@@ -50,9 +64,9 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
           <input
             type="text"
             className="form-control"
-            value={price}
+            value={newCoffee.price}
             placeholder="€"
-            onChange={(e) => addPrice(e.target.value)}
+            onChange={handlePriceChange}
           />
         </div>
         <div className="form-group col-md-4">
@@ -62,9 +76,9 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
           <input
             type="url"
             className="form-control"
-            value={image}
+            value={newCoffee.image}
             placeholder="Image URL"
-            onChange={(e) => addImage(e.target.value)}
+            onChange={handleImageChange}
           />
         </div>
         <button type="submit" className="btn btn-success">
