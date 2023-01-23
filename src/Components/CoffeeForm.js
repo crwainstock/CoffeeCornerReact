@@ -22,6 +22,12 @@ function CoffeeForm({ addCoffeeCB }) {
     setNewCoffee(newCoffee);
     setId((id) => id + 1); //This is throwing an error
     addCoffeeCB(newCoffee);
+
+    setNewCoffee({
+      name: "",
+      price: "",
+      image: "",
+    });
   }
 
   return (
