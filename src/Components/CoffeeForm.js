@@ -2,31 +2,26 @@ import { useState } from "react";
 import "../App.css";
 import "../App";
 
-function CoffeeForm() {
-  const [newCoffee, setNewCoffee] = useState({
+function CoffeeForm({ addCoffeeCB }) {
+  const [coffee, setNewCoffee] = useState({
     name: "",
     price: "",
     image: "",
+    id: 0,
   });
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
+  function handleChange(event) {
+    let newCoffee = { ...coffee, [event.target.name]: event.target.value };
+    setNewCoffee(newCoffee);
+  }
 
-    setNewCoffee((state) => ({
-      ...state,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    // console.log("submitted");
-    e.preventDefault();
-    console.log(newCoffee); //working
-    // handleAddCoffee(newCoffee);
-
-    //Something to reset form input fields upon submission -- reset state values to empty?
-  };
+  function handleSubmit(event) {
+    event.preventDefault();
+    let newCoffee = { ...coffee, id: id };
+    setNewCoffee(newCoffee);
+    setId((id) => id + 1); //This is throwing an error
+    addCoffeeCB(newCoffee);
+  }
 
   return (
     <div className="container">
@@ -40,9 +35,9 @@ function CoffeeForm() {
             type="text"
             name="name"
             className="form-control"
-            value={newCoffee.name} //passing prop here
+            value={coffee.name} //passing prop here
             placeholder="Name"
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="form-group col-md-4">
@@ -53,9 +48,9 @@ function CoffeeForm() {
             type="text"
             name="price"
             className="form-control"
-            value={newCoffee.price}
+            value={coffee.price}
             placeholder="€"
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="form-group col-md-4">
@@ -66,9 +61,9 @@ function CoffeeForm() {
             type="text"
             name="image"
             className="form-control"
-            value={newCoffee.image}
+            value={coffee.image}
             placeholder="Image URL"
-            onChange={(e) => handleInputChange(e)}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <button type="submit" className="btn btn-success">
