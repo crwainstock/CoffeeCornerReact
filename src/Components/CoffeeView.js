@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./CoffeeView.css";
 
-function CoffeeView({ allCoffees, featuredSelectedCB }) {
+function CoffeeView({ coffeeArray, onFeatured }) {
   const [featured, setFeatured] = useState({});
   //   console.log(allCoffees);
 
   function handleClick(id) {
     console.log("clicked");
-    let selected = allCoffees.find((item) => item.id === id);
+    let selected = coffeeArray.find((item) => item.id === id);
     setFeatured(selected);
-    featuredSelectedCB();
+    onFeatured();
     //This function is defined in the App.js parent -- called here to communicate back up to parent
   }
 
@@ -33,7 +33,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
       </div>
       <div id="container-grid" className="container">
         <div id="coffee-grid" className="row">
-          {allCoffees?.map((coffee) => (
+          {coffeeArray.map((coffee) => (
             <div id="coffee" key={coffee.id} className="col-sm-3">
               <h4 id={coffee.id}>{coffee.name}</h4>
               <img
