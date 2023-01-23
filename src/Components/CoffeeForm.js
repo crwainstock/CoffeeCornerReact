@@ -9,6 +9,7 @@ function CoffeeForm({ addCoffeeCB }) {
     image: "",
     id: 0,
   });
+  const [id, setId] = useState(7);
 
   function handleChange(event) {
     let newCoffee = { ...coffee, [event.target.name]: event.target.value };
