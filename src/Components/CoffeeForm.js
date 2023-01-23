@@ -2,13 +2,25 @@ import { useState } from "react";
 import "../App.css";
 import "../App";
 
-function CoffeeForm({ allCoffees, handleAddCoffee }) {
+function CoffeeForm({ handleAddCoffee }) {
   //Is this where I need to destructure this handleAddCoffees function? idk.
   const [newCoffee, setNewCoffee] = useState({
     name: "",
     price: "",
     image: "",
   });
+
+  //Tried to simplify the handleInputChange, but it's not working yet.
+  // const handleInputChange(event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+
+  //   setNewCoffee((state) => ({
+  //     ...state,
+  //     [name]:value,
+  //   }));
+  // };
+
   //Update name property when new item is added
   const handleNameChange = (event) => {
     setNewCoffee((prevState) => ({
@@ -16,14 +28,14 @@ function CoffeeForm({ allCoffees, handleAddCoffee }) {
       name: event.target.value,
     }));
   };
-  //Update price property
+  // Update price property
   const handlePriceChange = (event) => {
     setNewCoffee((prevState) => ({
       ...prevState,
       price: event.target.value,
     }));
   };
-  //Update image property
+  // Update image property
   const handleImageChange = (event) => {
     setNewCoffee((prevState) => ({
       ...prevState,
@@ -35,8 +47,9 @@ function CoffeeForm({ allCoffees, handleAddCoffee }) {
     // console.log("submitted");
     e.preventDefault();
     console.log(newCoffee); //working
-    handleAddCoffee(newCoffee);
-    //This bit is copied from what was done in the CoffeeView component, but something is missing.
+    // handleAddCoffee(newCoffee);
+
+    // setAllCoffeesCB(newCoffee);
     //Something to reset form input fields upon submission -- reset state values to empty?
   };
 
@@ -74,7 +87,7 @@ function CoffeeForm({ allCoffees, handleAddCoffee }) {
             <h4>Image URL</h4>
           </label>
           <input
-            type="url"
+            type="text"
             className="form-control"
             value={newCoffee.image}
             placeholder="Image URL"

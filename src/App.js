@@ -1,16 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import CoffeeForm from "./Components/CoffeeForm";
-import "./Components/CoffeeView"; //import CoffeeView component
 import CoffeeView from "./Components/CoffeeView";
-// import "./Components/CoffeeForm";
 
 import MyCoffees from "./Components/MyCoffees";
 
 function App() {
   //set state data -- allCoffees = empty array(initially, now it's using default data js file), setCoffees = function to modify the allCoffees array
   const [allCoffees, setAllCoffees] = useState(MyCoffees);
-  //Can I define setCoffees here and use it in the CoffeeForm component?
   const [gridView, setGridView] = useState(true);
 
   //With help from Joy. Thank you!
@@ -23,19 +20,20 @@ function App() {
   const handleAddCoffee = (newCoffee) => {
     handleIncrementId();
     setAllCoffees((prevState) => [...prevState, { ...newCoffee, id }]); //setAllCoffees is not defined error
+
+    console.log(allCoffees);
   };
 
-  console.log(allCoffees);
-
-  function featuredSelected() {
-    console.log("hello");
-  }
+  // function featuredSelected() {
+  //   console.log("hello");
+  // }
   //What is this actually doing? We don't really need it, do we???
 
   return (
     <div className="App">
       <main>
         <nav>
+          {/* This can be simplified */}
           {gridView ? (
             <button
               className="btn btn-warning"
@@ -70,11 +68,11 @@ function App() {
         <div className="container">
           <h1>Coffee Corner</h1>
           {gridView ? (
-            <CoffeeView handleAddCoffee={handleAddCoffee} /> //Updated this and get setAllCoffees is not defined error in line 25
+            <CoffeeView handleAddCoffee={handleAddCoffee} />
           ) : (
             <CoffeeForm
               allCoffees={allCoffees}
-              setAllCoffeesCB={setAllCoffees}
+              setAllCoffeesCB={setAllCoffees} //I don't know what to do with this...ugh.
             />
           )}
         </div>
