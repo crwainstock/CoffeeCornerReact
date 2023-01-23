@@ -9,6 +9,21 @@ function CoffeeForm({ handleAddCoffee }) {
     price: "",
     image: "",
   });
+<<<<<<< HEAD
+=======
+
+  //Tried to simplify the handleInputChange, but it's not working yet.
+  // const handleInputChange(event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+
+  //   setNewCoffee((state) => ({
+  //     ...state,
+  //     [name]:value,
+  //   }));
+  // };
+
+>>>>>>> c1479bbe3d73f48c0de3cb0c92cd846f9856f0a6
   //Update name property when new item is added
   const handleNameChange = (event) => {
     setNewCoffee((prevState) => ({
@@ -16,14 +31,22 @@ function CoffeeForm({ handleAddCoffee }) {
       name: event.target.value,
     }));
   };
+<<<<<<< HEAD
   //Update price property
+=======
+  // Update price property
+>>>>>>> c1479bbe3d73f48c0de3cb0c92cd846f9856f0a6
   const handlePriceChange = (event) => {
     setNewCoffee((prevState) => ({
       ...prevState,
       price: event.target.value,
     }));
   };
+<<<<<<< HEAD
   //Update image property
+=======
+  // Update image property
+>>>>>>> c1479bbe3d73f48c0de3cb0c92cd846f9856f0a6
   const handleImageChange = (event) => {
     setNewCoffee((prevState) => ({
       ...prevState,
@@ -37,6 +60,10 @@ function CoffeeForm({ handleAddCoffee }) {
     console.log(newCoffee); //working
     // handleAddCoffee(newCoffee);
 
+<<<<<<< HEAD
+=======
+    // setAllCoffeesCB(newCoffee);
+>>>>>>> c1479bbe3d73f48c0de3cb0c92cd846f9856f0a6
     //Something to reset form input fields upon submission -- reset state values to empty?
   };
 
@@ -74,7 +101,7 @@ function CoffeeForm({ handleAddCoffee }) {
             <h4>Image URL</h4>
           </label>
           <input
-            type="url"
+            type="text"
             className="form-control"
             value={newCoffee.image}
             placeholder="Image URL"
