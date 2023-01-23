@@ -13,6 +13,18 @@ function App() {
   //Can I define setCoffees here and use it in the CoffeeForm component?
   const [gridView, setGridView] = useState(true);
 
+  //With help from Joy. Thank you!
+  const [id, setId] = useState(allCoffees.length + 1);
+
+  const handleIncrementId = () => {
+    setId((prevState) => prevState + 1); //Incrementing id -- prevState
+  };
+
+  const handleAddCoffee = (newCoffee) => {
+    handleIncrementId();
+    setAllCoffees((prevState) => [...prevState, { ...newCoffee, id }]); //setAllCoffees is not defined error
+  };
+
   console.log(allCoffees);
 
   function featuredSelected() {
@@ -58,10 +70,7 @@ function App() {
         <div className="container">
           <h1>Coffee Corner</h1>
           {gridView ? (
-            <CoffeeView
-              allCoffees={allCoffees}
-              featuredSelectedCB={featuredSelected}
-            />
+            <CoffeeView handleAddCoffee={handleAddCoffee} /> //Updated this and get setAllCoffees is not defined error in line 25
           ) : (
             <CoffeeForm allCoffees={allCoffees} setCoffeesCB={setCoffees} />
           )}
