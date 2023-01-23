@@ -2,8 +2,8 @@ import { useState } from "react";
 import "../App.css";
 import "../App";
 
-function CoffeeForm({ allCoffees, setCoffeesCB }) {
-  const [newCoffee, setCoffees] = useState({}); //Whole new coffee object
+function CoffeeForm({ allCoffees, setAllCoffeesCB }) {
+  const [newCoffee, setAllCoffees] = useState({}); //Whole new coffee object
   const [name, addName] = useState("");
   const [price, addPrice] = useState("");
   const [image, addImage] = useState("");
@@ -21,7 +21,7 @@ function CoffeeForm({ allCoffees, setCoffeesCB }) {
     console.log(newCoffee); //working
     //Something here to set new ID with each submission -- increment
     //Something to push newCoffee into allCoffees array -- addCoffee function?
-    setCoffees(newCoffee);
+    setAllCoffees(newCoffee);
     setCoffeesCB();
     //This bit is copied from what was done in the CoffeeView component, but something is missing.
     //Something to reset form input fields upon submission -- reset state values to empty?
