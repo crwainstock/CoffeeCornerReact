@@ -33,6 +33,7 @@ function CoffeeView({ allCoffees, featuredSelectedCB }) {
       </div>
       <div id="container-grid" className="container">
         <div id="coffee-grid" className="row">
+          {/* Getting an error here re: map */}
           {allCoffees.map((coffee) => (
             <div id="coffee" key={coffee.id} className="col-sm-3">
               <h4 id={coffee.id}>{coffee.name}</h4>
