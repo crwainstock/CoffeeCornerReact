@@ -10,27 +10,10 @@ function App() {
   const [allCoffees, setAllCoffees] = useState(MyCoffees);
   const [gridView, setGridView] = useState(true);
 
-<<<<<<< HEAD
   const handleAddCoffee = (newCoffee) => {
     console.log(allCoffees);
   };
 
-=======
-  //With help from Joy. Thank you!
-  const [id, setId] = useState(allCoffees.length + 1);
-
-  const handleIncrementId = () => {
-    setId((prevState) => prevState + 1); //Incrementing id -- prevState
-  };
-
-  const handleAddCoffee = (newCoffee) => {
-    handleIncrementId();
-    setAllCoffees((prevState) => [...prevState, { ...newCoffee, id }]); //setAllCoffees is not defined error
-
-    console.log(allCoffees);
-  };
-
->>>>>>> c1479bbe3d73f48c0de3cb0c92cd846f9856f0a6
   // function featuredSelected() {
   //   console.log("hello");
   // }
