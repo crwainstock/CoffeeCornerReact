@@ -2,32 +2,20 @@ import { useState } from "react";
 import "../App.css";
 import "../App";
 
-function CoffeeForm({ handleAddCoffee }) {
-  //Is this where I need to destructure this handleAddCoffees function? idk.
+function CoffeeForm() {
   const [newCoffee, setNewCoffee] = useState({
     name: "",
     price: "",
     image: "",
   });
-  //Update name property when new item is added
-  const handleNameChange = (event) => {
-    setNewCoffee((prevState) => ({
-      ...prevState,
-      name: event.target.value,
-    }));
-  };
-  //Update price property
-  const handlePriceChange = (event) => {
-    setNewCoffee((prevState) => ({
-      ...prevState,
-      price: event.target.value,
-    }));
-  };
-  //Update image property
-  const handleImageChange = (event) => {
-    setNewCoffee((prevState) => ({
-      ...prevState,
-      price: event.target.value,
+
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+
+    setNewCoffee((state) => ({
+      ...state,
+      [name]: value,
     }));
   };
 
@@ -50,11 +38,11 @@ function CoffeeForm({ handleAddCoffee }) {
           </label>
           <input
             type="text"
+            name="name"
             className="form-control"
             value={newCoffee.name} //passing prop here
             placeholder="Name"
-            onChange={handleNameChange}
-            // onChange={(e) => addName(e.target.value)} //updates state when something is submitted here - each keystroke? Original attempt.
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div className="form-group col-md-4">
@@ -63,10 +51,11 @@ function CoffeeForm({ handleAddCoffee }) {
           </label>
           <input
             type="text"
+            name="price"
             className="form-control"
             value={newCoffee.price}
             placeholder="€"
-            onChange={handlePriceChange}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <div className="form-group col-md-4">
@@ -75,10 +64,11 @@ function CoffeeForm({ handleAddCoffee }) {
           </label>
           <input
             type="text"
+            name="image"
             className="form-control"
             value={newCoffee.image}
             placeholder="Image URL"
-            onChange={handleImageChange}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
         <button type="submit" className="btn btn-success">

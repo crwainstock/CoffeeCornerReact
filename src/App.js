@@ -7,7 +7,7 @@ import MyCoffees from "./Components/MyCoffees";
 
 function App() {
   //set state data -- allCoffees = empty array(initially, now it's using default data js file), setCoffees = function to modify the allCoffees array
-  const [allCoffees, setAllCoffees] = useState(MyCoffees);
+  const [allCoffees, setAllCoffees] = useState(MyCoffees); //idk. default coffees not loading anymore.
   const [gridView, setGridView] = useState(true);
 
   const handleAddCoffee = (newCoffee) => {
